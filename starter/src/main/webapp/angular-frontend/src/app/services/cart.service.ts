@@ -21,8 +21,8 @@ export class CartService {
   addToCart(product: any, amount: any) {
     //TODO: Add item to the cart
 
-    let itemes = this.cartProducts.findIndex((produc0) => produc0.id === product.id);
-    if (itemes >= 0) {
+    let itemes = this.cartProducts.findIndex((produc0) => produc0.name === product.name);
+    if (itemes) {
       this.cartProducts[itemes].amount += 1;
     } else {
       this.cartProducts.push(product);
