@@ -18,7 +18,7 @@ export class CartService {
     return this.cartProducts;
   }
 
-  addToCart(product: any, amount: any) {
+  addToCart(product: any, selected: any) {
     //TODO: Add item to the cart
 
     let itemes = this.cartProducts.findIndex((produc0) => produc0.id === product.id);
