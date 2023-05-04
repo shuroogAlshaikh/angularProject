@@ -55,7 +55,10 @@ export class CartComponent implements OnInit {
     order.total = this.total;
 
     //TODO: Submit order - call the service
-    this.cartService.submitOrder(order);
+  this.cartService.submitOrder(order).subscribe(
+      (response)=> {console.log("submit Order")},
+      (error)=>console.log("error")
+    );
 
     this.cartService.clearCart();
     this.cartProducts = [];
