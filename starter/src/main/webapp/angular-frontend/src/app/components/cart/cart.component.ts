@@ -56,16 +56,17 @@ export class CartComponent implements OnInit {
 
     //TODO: Submit order - call the service
   this.cartService.submitOrder(order).subscribe(
-      (response)=> {console.log("submit Order")},
-      (error)=>console.log("error")
-    );
-
-    this.cartService.clearCart();
+      (response)=> {this.cartService.clearCart();
     this.cartProducts = [];
     this.router.navigate([
       '/confirmation',
       { customerName: this.customerName, total: this.total },
     ]);
+                   },
+      (error)=>console.log("error")
+    );
+
+    
   }
 
   // util
